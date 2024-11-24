@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+    სწრაფი ვიქტორინა - ვიქტორინა
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>ვიქტორინა დასრულდა</h1>
+    <p>შენი ქულა არის {{ score }}, {{ total_questions }}-დან</p>
+    {% if elapsed_time %}
+        <p>დახარჯული დრო: {{ elapsed_time.seconds // 60 }} წუთი და {{ elapsed_time.seconds % 60 }} წამი</p>
+    {% endif %}
+    <a href="{{ url_for('game.select_game') }}" class="btn btn-primary">კიდევ ცადე</a>
+</div>
+{% endblock %}
